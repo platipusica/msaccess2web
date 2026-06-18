@@ -19,7 +19,7 @@ No database migration required.
 - Preserves Access compatibility
 
     
-[![alt text](https://github.com/platipusica/msaccess2web/blob/main/output.gif?raw=true)]
+(https://github.com/platipusica/msaccess2web/blob/main/output.gif?raw=true)
 
 ## Commercial support
 
