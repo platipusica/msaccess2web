@@ -12,7 +12,7 @@ Supports:
 No database migration required. No code needed.
 
 
-https://github.com/platipusica/msaccess2web/blob/main/output.gif?raw=true
+[![alt text](https://github.com/platipusica/msaccess2web/blob/main/output.gif?raw=true)](https://raw.githubusercontent.com/platipusica/msaccess2web/refs/heads/main/output.gif)
 
 
 ## Features
