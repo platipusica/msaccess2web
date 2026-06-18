@@ -11,12 +11,12 @@ Supports:
   
 No database migration required. No code needed.
 
-Web application created with a **single command** in 1 second:
+Web application created with **a single command** in 1 second:
 
 [![alt text](https://github.com/platipusica/msaccess2web/blob/main/output.gif?raw=true)](https://raw.githubusercontent.com/platipusica/msaccess2web/refs/heads/main/output.gif)
 
 
-Command:
+A single command:
 
 ```
  python scaffold.py --db C:\Users\dba\Downloads\access_database.accdb
@@ -39,6 +39,7 @@ File on Windows:
 (py312) C:\Users\dba\Downloads>type access_database.accdb
 Standard ACE DB...
 ```
+
 
 
 ## Features
