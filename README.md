@@ -9,7 +9,11 @@ Supports:
 - server-side paging (OFFSET simulation)
 - parameterized filters
   
-No database migration required.
+No database migration required. No code needed.
+
+
+![alt text](https://github.com/platipusica/msaccess2web/blob/main/output.gif?raw=true)
+
 
 ## Features
 
@@ -18,8 +22,6 @@ No database migration required.
 - Works with ODBC drivers on Windows
 - Preserves Access compatibility
 
-    
-![alt text](https://github.com/platipusica/msaccess2web/blob/main/output.gif?raw=true)
 
 ## Commercial support
 
@@ -37,5 +39,7 @@ Contact if:
 MS Access DB -> msaccess2web -> WEB / REST / SQL API
 
 Then:
-Web apps can use Access as backend safely. 
-As per above video (no Authentication used, simple off/on)
+
+Web apps can use Access as backend safely.
+
+As per above video.
