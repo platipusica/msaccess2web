@@ -12,7 +12,7 @@ Supports:
 No database migration required. No code needed.
 
 
-![alt text](https://github.com/platipusica/msaccess2web/blob/main/output.gif?raw=true)
+https://github.com/platipusica/msaccess2web/blob/main/output.gif?raw=true
 
 
 ## Features
@@ -21,6 +21,17 @@ No database migration required. No code needed.
 - Reliable server-side paging (TOP + window emulation)
 - Works with ODBC drivers on Windows
 - Preserves Access compatibility
+
+
+## Enables a Service
+
+MS Access DB -> msaccess2web -> WEB / REST / SQL API
+
+Then:
+
+Web apps can use Access as backend safely. Use OAuth, MS Entra, etc as authentication (code needed).
+
+Or use internal msaccess2web authentication. 
 
 
 ## Commercial support
@@ -33,13 +44,3 @@ Contact if:
 - fear rewriting everything
 - need MS Access data on the Web
 
-
-## Enables a Service
-
-MS Access DB -> msaccess2web -> WEB / REST / SQL API
-
-Then:
-
-Web apps can use Access as backend safely.
-
-As per above video.
