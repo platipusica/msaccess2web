@@ -22,6 +22,21 @@ Command:
  python scaffold.py --db C:\Users\dba\Downloads\access_database.accdb
 ```
 
+File on Windows:
+```
+(py312) C:\Users\dba\Downloads\ai>dir access_database.accdb
+ Volume in drive C has no label.
+ Volume Serial Number is FEBB-5BF6
+
+ Directory of C:\Users\dba\Downloads\
+
+08/06/2026  06:36 PM         8,388,608 access_database.accdb
+               1 File(s)      8,388,608 bytes
+               0 Dir(s)  40,732,401,664 bytes free
+
+(py312) C:\Users\dba\Downloads\ai>type access_database.accdb
+Standard ACE DB...
+```
 
 
 ## Features
