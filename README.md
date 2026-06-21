@@ -6,7 +6,7 @@ Run Microsoft Access database on the Web.
   
 No database migration required. No code needed.
 
-Web application created with **a single command** in 1 second with the result shown below:
+Web application created with **a single command in 1 second** and the data preserved:
 
 
 ```
@@ -42,7 +42,7 @@ Standard ACE DB...
 
 ## Features
 
-- Works with ODBC drivers on Windows only
+- Works on Windows only
 - Preserves Access compatibility
 
 
