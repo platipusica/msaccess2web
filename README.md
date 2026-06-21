@@ -17,7 +17,7 @@ scaffold.py --db **C:\Users\dba\Downloads\access_database.accdb**
 
 File size for this example:
 ```
-(py312) C:\Users\dba\Downloads>dir access_database.accdb
+C:\Users\dba\Downloads>dir access_database.accdb
  Volume in drive C has no label.
  Volume Serial Number is FEBB-5BF6
 
@@ -30,7 +30,7 @@ File size for this example:
 
 File type:
 ```
-(py312) C:\Users\dba\Downloads>type access_database.accdb
+C:\Users\dba\Downloads>type access_database.accdb
 Standard ACE DB...
 ```
 
@@ -41,15 +41,6 @@ Standard ACE DB...
 
 - Works on Windows only
 - Preserves Access compatibility
-
-
-## Enables a Service
-
-MS Access DB -> msaccess2web -> WEB / REST / SQL API
-
-Then:
-
-Web apps can use Access as backend safely. 
 
 
 ## Commercial support
