@@ -3,24 +3,21 @@
 # MS Access Modernizer
 
 Run Microsoft Access database on the Web.
-
-Supports:
-- JOIN-heavy queries
-- server-side paging (OFFSET simulation)
-- parameterized filters
   
 No database migration required. No code needed.
 
-Web application created with **a single command** in 1 second:
+Web application created with **a single command** in 1 second with the result shown below:
+
+
+```
+ scaffold.py --db **C:\Users\dba\Downloads\access_database.accdb**
+```
+
 
 [![alt text](https://github.com/platipusica/msaccess2web/blob/main/output.gif?raw=true)](https://raw.githubusercontent.com/platipusica/msaccess2web/refs/heads/main/output.gif)
 
 
-A single command:
 
-```
- python scaffold.py --db C:\Users\dba\Downloads\access_database.accdb
-```
 
 File on Windows:
 ```
@@ -35,6 +32,7 @@ File on Windows:
                0 Dir(s)  40,732,401,664 bytes free
 ```
 
+This is the real MS Access file:
 ```
 (py312) C:\Users\dba\Downloads>type access_database.accdb
 Standard ACE DB...
@@ -44,8 +42,6 @@ Standard ACE DB...
 
 ## Features
 
-- Fixes Microsoft Access JOIN limitations
-- Reliable server-side paging (TOP + window emulation)
 - Works with ODBC drivers on Windows only
 - Preserves Access compatibility
 
