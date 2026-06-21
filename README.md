@@ -1,7 +1,7 @@
 # msaccess2web
 
-Run Microsoft Access database on the Web.
-  
+Access Microsoft Access data on the Web.
+
 No database migration required. No code needed.
 
 Web application created with **a single command in 1 second**:
@@ -9,12 +9,13 @@ Web application created with **a single command in 1 second**:
 scaffold.py --db **C:\Users\dba\Downloads\access_database.accdb**
 
 
+
 [![alt text](https://github.com/platipusica/msaccess2web/blob/main/output.gif?raw=true)](https://raw.githubusercontent.com/platipusica/msaccess2web/refs/heads/main/output.gif)
 
 
 
 
-File on Windows:
+File size for this example:
 ```
 (py312) C:\Users\dba\Downloads>dir access_database.accdb
  Volume in drive C has no label.
@@ -27,11 +28,12 @@ File on Windows:
                0 Dir(s)  40,732,401,664 bytes free
 ```
 
-This is the real MS Access file:
+File type:
 ```
 (py312) C:\Users\dba\Downloads>type access_database.accdb
 Standard ACE DB...
 ```
+
 
 
 
