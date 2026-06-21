@@ -1,12 +1,10 @@
 # msaccess2web
 
-# MS Access Modernizer
-
 Run Microsoft Access database on the Web.
   
 No database migration required. No code needed.
 
-Web application created with **a single command in 1 second** and the data preserved:
+Web application created with **a single command in 1 second**:
 
 scaffold.py --db **C:\Users\dba\Downloads\access_database.accdb**
 
