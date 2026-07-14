@@ -21,26 +21,25 @@ jobs:
     - name: Set up Python
       uses: actions/setup-python@v5
       with:
-        python-version: '3.12'
+        python-version: '3.11'
         architecture: 'x64'
     
     - name: Install dependencies
       run: |
         python -m pip install --upgrade pip
-        pip install pyodbc textblob sqlparse
-        
-        # Download textblob corpora using the correct method
-        python -m textblob.download_corpora lite
-        #python -c "import textblob.download_corpora; textblob.download_corpora.download()"
+        pip install pyodbc sqlparse inflect
+        # If you still need textblob instead of inflect:
+        # pip install textblob
+        # python -c "import nltk; nltk.download('punkt'); nltk.download('averaged_perceptron_tagger'); nltk.download('brown'); nltk.download('wordnet')"
     
-    - name: Build Windows Executable
+    - name: Build Windows Executable (Console)
       uses: Nuitka/Nuitka-Action@main
       with:
         script-name: scaffold_msaccess.py
         mode: onefile
-#        windows-disable-console: true
-        include-package-data: 'textblob sqlparse pyodbc'
-        enable-plugin: 'anti-bloat tk-inter'
+        # Remove windows-disable-console to keep console visible
+        include-package-data: 'sqlparse pyodbc'
+        enable-plugin: 'anti-bloat'
         nofollow-import-to: 'unittest pytest setuptools IPython numba scipy'
         output-file: scaffold_msaccess.exe
         assume-yes-for-downloads: true
