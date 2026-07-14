@@ -1,4 +1,4 @@
-name: Build Windows Executable
+/name: Build Windows Executable
 
 on:
   push:
@@ -24,52 +24,20 @@ jobs:
         python-version: '3.11'
         architecture: 'x64'
     
-    - name: Install dependencies
+    - name: Install dependencies and download corpora
       run: |
         python -m pip install --upgrade pip
         pip install pyodbc sqlparse textblob
-        # Download required corpora
-        python -c "import nltk; nltk.download('punkt'); nltk.download('averaged_perceptron_tagger'); nltk.download('brown'); nltk.download('wordnet')"
-        python -c "from textblob.download_corpora import download; download()"
+        python download_corpora.py
     
-#    - name: Build Windows Executable
-#      uses: Nuitka/Nuitka-Action@main
-#      with:
-#        script-name: scaffold_msaccess.py
-#        mode: onefile
-#        msvc: latest
-#        include-package: 'textblob nltk'  # Explicitly include textblob and nltk
-#        include-package-data: 'sqlparse pyodbc textblob'
-#        enable-plugin: 'anti-bloat'
-#        nofollow-import-to: 'unittest pytest setuptools IPython numba scipy'
-#        output-file: scaffold_msaccess.exe
-#        assume-yes-for-downloads: true
     - name: Build Windows Executable
       shell: pwsh
       run: |
-        python -m nuitka --standalone --onefile --msvc=latest `
-          --enable-plugin=anti-bloat `
-          --include-package=textblob `
-          --include-package=nltk `
-          --include-package=sqlparse `
-          --include-package=pyodbc `
-          --include-package-data=textblob `
-          --include-package-data=nltk `
-          --include-package-data=sqlparse `
-          --include-package-data=pyodbc `
-          --nofollow-import-to=unittest `
-          --nofollow-import-to=pytest `
-          --nofollow-import-to=setuptools `
-          --nofollow-import-to=IPython `
-          --nofollow-import-to=numba `
-          --nofollow-import-to=scipy `
-          --output-dir=build `
-          --output-filename=scaffold_msaccess.exe `
-          scaffold_msaccess.py
-
+        python -m nuitka --standalone --onefile --msvc=latest --enable-plugin=anti-bloat --include-package=textblob --include-package=nltk --include-package-data=sqlparse --include-package-data=pyodbc --include-package-data=textblob --nofollow-import-to=unittest --nofollow-import-to=pytest --nofollow-import-to=setuptools --output-dir=build --output-filename=scaffold_msaccess.exe scaffold_msaccess.py
+    
     - name: Upload Artifact
       uses: actions/upload-artifact@v4
       with:
         name: ScaffoldDB-Windows
-        path: scaffold_msaccess.exe
+        path: build/scaffold_msaccess.exe
         if-no-files-found: error
