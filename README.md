@@ -15,7 +15,7 @@ Download this repository. If no MS Access is not installed, you'll need [Microso
 
 Open Windows "Command Prompt". Navigate to downloaded or unzipped folder. Run as above IF you have Python installed, plus "pip install pyodbc textblob sqlparse":
 
-scaffold.py --db **C:\Users\Downloads\access_database.accdb**
+scaffold_msaccess.py --db **C:\Users\Downloads\access_database.accdb**
 
 
 If Python is not installed, download scaffold_msaccess.exe from Releases on the right hand side, and run:
