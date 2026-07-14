@@ -43,7 +43,9 @@ jobs:
         include-data-dir: 
           - '.=.'  # Include all files from current directory
         include-package-data: 
-          - 'pyodbc'  # Include pyodbc package data
+          - 'textblob'
+          - 'sqlparse'
+          - 'pyodbc'
         enable-plugin: 
           - 'anti-bloat'  # Reduces file size
           - 'tk-inter'  # If you're using tkinter for GUI
