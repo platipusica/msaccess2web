@@ -1,0 +1,78 @@
+name: Build Windows Executable
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+  release:
+    types: [ created ]
+
+jobs:
+  build:
+    runs-on: windows-latest
+    
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v3
+    
+    - name: Set up Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.10'
+        architecture: 'x64'
+    
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        #pip install pyodbc
+        # Add any other dependencies your script needs
+        pip install -r requirements.txt  # if you have one
+        
+    - name: Build Windows Executable (GUI - No Console)
+      uses: Nuitka/Nuitka-Action@main
+      with:
+        nuitka-version: main
+        script-name: scaffold_msaccess.py  # Your main script
+        mode: onefile
+        #onefile-tempdir-spec: C:\Windows\Temp  # Optional: temp directory
+        # Windows-specific options
+        #windows-disable-console: true  # Hides console window
+        windows-uac-admin: false  # Set to true if app needs admin rights
+        #windows-icon-from-ico: path/to/icon.ico  # Optional: add icon
+        include-data-dir: 
+          - '.=.'  # Include all files from current directory
+        include-package-data: 
+          - 'pyodbc'  # Include pyodbc package data
+        enable-plugin: 
+          - 'anti-bloat'  # Reduces file size
+          - 'tk-inter'  # If you're using tkinter for GUI
+        nofollow-import-to: 
+          - 'unittest'
+          - 'pytest'
+          - 'setuptools'
+          - 'IPython'
+          - 'numba'
+          - 'scipy'
+        # Output options
+        output-file: scaffold_msaccess.exe
+        # Build options
+        assume-yes-for-downloads: true  # Automatically accept downloads
+    
+    - name: Upload Artifact
+      uses: actions/upload-artifact@v3
+      with:
+        name: ScaffoldDB-Windows
+        path: scaffold_msaccess.exe
+        if-no-files-found: error
+    
+    - name: Upload to Release
+      if: github.event_name == 'release'
+      uses: actions/upload-release-asset@v1
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      with:
+        upload_url: ${{ github.event.release.upload_url }}
+        asset_path: ./scaffold_msaccess.exe
+        asset_name: scaffold_msaccess.exe
+        asset_content_type: application/octet-stream
