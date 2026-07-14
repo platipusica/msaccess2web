@@ -48,11 +48,11 @@ jobs:
       uses: actions/upload-artifact@v4
       with:
         name: ScaffoldDB-Windows
-        path: scaffold_msaccess.exe
+        path: build/scaffold_msaccess.exe
         if-no-files-found: error
     
     - name: Upload Release Asset
       if: startsWith(github.ref, 'refs/tags/')
       uses: softprops/action-gh-release@v2
       with:
-        files: scaffold_msaccess.exe
+        files: build/scaffold_msaccess.exe
