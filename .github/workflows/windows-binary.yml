@@ -30,7 +30,8 @@ jobs:
         pip install pyodbc textblob sqlparse
         
         # Download textblob corpora using the correct method
-        python -c "import textblob.download_corpora lite; textblob.download_corpora.download()"
+        python -m textblob.download_corpora lite
+        #python -c "import textblob.download_corpora; textblob.download_corpora.download()"
     
     - name: Build Windows Executable
       uses: Nuitka/Nuitka-Action@main
