@@ -1,13 +1,29 @@
 # msaccess2web
 
-Access Microsoft Access data on the Web.
+## Access Microsoft Access data on the Web.
 
 No database migration required. No code needed.
 
 Web application created with **a single command in 1 second**:
 
-scaffold.py --db **C:\Users\dba\Downloads\access_database.accdb**
+scaffold.py --db **C:\Users\Downloads\access_database.accdb**
 
+
+# How to run?
+
+Download this repository. If no MS Access is not installed, you'll need [Microsoft Access 2016 Runtime](https://www.microsoft.com/en-us/download/details.aspx?id=50040).
+
+Open Windows "Command Prompt". Navigate to downloaded or unzipped folder. Run as above IF you have Python installed, plus "pip install pyodbc textblob sqlparse":
+
+scaffold.py --db **C:\Users\Downloads\access_database.accdb**
+
+
+If Python is not installed, download scaffold_msaccess.exe from Releases on the right hand side, and run:
+
+scaffold_msaccess.exe --db **C:\Users\Downloads\access_database.accdb**
+
+
+scaffold_msaccess.exe is packaged application by Github actions with Python and above pyodbc textblob sqlparse dependencies. It is safe to use.
 
 
 [![alt text](https://github.com/platipusica/msaccess2web/blob/main/output.gif?raw=true)](https://raw.githubusercontent.com/platipusica/msaccess2web/refs/heads/main/output.gif)
@@ -52,4 +68,3 @@ Contact if:
 - cannot migrate easily
 - fear rewriting everything
 - need MS Access data on the Web
-
