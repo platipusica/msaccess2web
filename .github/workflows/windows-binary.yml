@@ -40,24 +40,12 @@ jobs:
         nuitka-version: main
         script-name: scaffold_msaccess.py
         mode: onefile
-        #windows-disable-console: true  # Uncommented this
+#        windows-disable-console: true
         windows-uac-admin: false
-        include-data-dir: 
-          - '.=.'
-        include-package-data: 
-          - 'textblob'
-          - 'sqlparse'
-          - 'pyodbc'
-        enable-plugin: 
-          - 'anti-bloat'
-          - 'tk-inter'
-        nofollow-import-to: 
-          - 'unittest'
-          - 'pytest'
-          - 'setuptools'
-          - 'IPython'
-          - 'numba'
-          - 'scipy'
+        include-data-dir: '.=.'  # Single line, not a list
+        include-package-data: 'textblob sqlparse pyodbc'  # Space-separated
+        enable-plugin: 'anti-bloat tk-inter'  # Space-separated
+        nofollow-import-to: 'unittest pytest setuptools IPython numba scipy'  # Space-separated
         output-file: scaffold_msaccess.exe
         assume-yes-for-downloads: true
     
